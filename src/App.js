@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Components/Routes';
@@ -5,7 +6,7 @@ import Routes from './Components/Routes';
 function App() {
   return (
     <BrowserRouter>
-        <Routes />
+      <Routes />
     </BrowserRouter>
   );
 }

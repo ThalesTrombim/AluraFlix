@@ -1,3 +1,8 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable keyword-spacing */
+/* eslint-disable import/order */
+/* eslint linebreak-style: ["error", "windows"]  */
+
 import React from 'react';
 import Footer from '../../Footer';
 import Menu from '../../Menu';
@@ -8,20 +13,20 @@ const Main = styled.main`
     color: var(--white);
     flex: 1;
     padding-top: 50px;
-    padding-left: 5%;
-    padding-right: 5%;
-`
+    padding-left: 0%;
+    padding-right: 0%;
+`;
 
-function PageDefault ({ children }) {
-    return(
-        <>
-            <Menu />
-                <Main>
-                    {children}
-                </Main>
-            <Footer />
-        </>
-    )
+function PageDefault({ children }) {
+  return(
+    <>
+      <Menu />
+      <Main>
+        {children}
+      </Main>
+      <Footer />
+    </>
+  );
 }
 
 export default PageDefault;
