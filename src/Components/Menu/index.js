@@ -3,12 +3,16 @@ import Logo from '../assets/images/logo.png';
 import { Button } from '../Button';
 import './styles.css';
 
+import { Link } from 'react-router-dom';
+
 function Menu() {
     return(
         <nav className="Menu">
-            <img src={Logo} alt=""/>
+            <Link to="/">
+                <img src={Logo} alt="" />
+            </Link>
         
-            <Button as="a" className="ButtonLink">
+            <Button as={Link} className="ButtonLink" to="/cadastro/video">
                 Novo Video
             </Button>
         
