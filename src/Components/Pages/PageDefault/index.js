@@ -1,7 +1,7 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
 /* eslint-disable keyword-spacing */
 /* eslint-disable import/order */
-/* eslint linebreak-style: ["error", "windows"]  */
 
 import React from 'react';
 import Footer from '../../Footer';
