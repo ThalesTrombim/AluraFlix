@@ -1,4 +1,4 @@
-/* eslint linebreak-style: ["error", "windows"]  */
+/* eslint-disable linebreak-style */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
