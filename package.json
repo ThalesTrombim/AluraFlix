@@ -17,9 +17,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "server": "json-server --watch db.json --port 8080",
+    "server": "node ./server.js",
     "dev": "concurrently \"react-scripts start\" \"npm run server\"",
-    "start": "react-scripts start",
+    "start": "npm run-server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^6.0.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
