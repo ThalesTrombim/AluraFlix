@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */

@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import Carousel from '../../Carousel';
 import BannerMain from '../../BannerMain';
