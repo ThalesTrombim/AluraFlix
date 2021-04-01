@@ -12,7 +12,7 @@ const Main = styled.main`
     background-color: var(--black);
     color: var(--white);
     flex: 1;
-    padding-top: 50px;
+    padding-top: 0px;
     padding-left: 0%;
     padding-right: 0%;
 `;

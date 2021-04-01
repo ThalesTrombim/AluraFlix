@@ -1,11 +1,24 @@
 /* eslint-disable linebreak-style */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Carousel from '../../Carousel';
 import BannerMain from '../../BannerMain';
 import dadosIniciais from '../../../data/dados_iniciais.json';
 import PageDefault from '../PageDefault';
 
 function Home() {
+  
+  useEffect(() => {
+    // http://localhost:8080/categorias?_embed=videos
+    categoriasRepository.getAllWithVideos()
+      .then((categoriasComVideos) => {
+        console.log(categoriasComVideos[0].videos[0]);
+        setDadosIniciais(categoriasComVideos);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
+  
   return (
     <div style={{ background: '#141414' }}>
       <PageDefault>

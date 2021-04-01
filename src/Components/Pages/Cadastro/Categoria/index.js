@@ -9,30 +9,17 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../PageDefault';
 import FormField from '../../../FormField/index';
 import { Button } from '../../../Button';
+import useForm from '../../../Hooks/useForm';
 
-function CadastroCategoria() {
+function CadastroCategorias() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descriçao: '',
     cor: '',
   };
 
-  const [categoria, setCategoria] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
-
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  }
-
-  function handleChange(e) {
-    setValue(
-      e.target.getAttribute('name'),
-      e.target.value,
-    );
-  }
+  const { values, handleChange, clearForm } = useForm(valoresIniciais);
+  const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
@@ -41,7 +28,7 @@ function CadastroCategoria() {
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
             const resposta = await respostaDoServer.json();
-            setCategoria(resposta);
+            setCategorias(resposta);
             return;
           }
           throw new Error('Não foi possível pegar os dados');
@@ -51,16 +38,16 @@ function CadastroCategoria() {
 
   return (
     <PageDefault>
-      <h1>Cadastro de Categoria</h1>
+      <h1>Cadastro de Categorias</h1>
       <form onSubmit={function handleSubmit(e) {
         e.preventDefault();
 
-        setCategoria([
-          ...categoria,
+        setCategorias([
+          ...categorias,
           values,
         ]);
 
-        setValues(valoresIniciais);
+        clearForm();
       }}
       >
         <FormField
@@ -88,6 +75,15 @@ function CadastroCategoria() {
           Cadastrar
         </Button>
       </form>
+
+      <ul>
+        {categorias.map((categoria) => (
+          <li key={`${categoria.titulo}`}>
+            {categoria.titulo}
+          </li>
+        ))}
+      </ul>
+
       <Link to="/">
         Ir para a Home
       </Link>
@@ -95,4 +91,4 @@ function CadastroCategoria() {
   );
 }
 
-export default CadastroCategoria;
+export default CadastroCategorias;
